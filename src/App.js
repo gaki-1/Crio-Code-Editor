@@ -1,14 +1,18 @@
-import './App.css';
-import Editor from './Editor';
+import React, { useState } from 'react'
+import Editor from './components/Editor';
 
 function App() {
+  const [html, setHtml] = useState('')
+  const [css, setCss] = useState('')
+  const [js, setJs] = useState('')
+
   return (
     <div className="App">
       <div>
         <div className="pane top-pane">
-          <Editor /*HTML code editor*/ />
-          <Editor /*CSS code editor*/ />
-          <Editor /*JS code editor*/ />
+          <Editor LangName="xml" value={html} onChange={setHtml} /*HTML code editor*/ />
+          <Editor LangName="css" value={css} onChange={setCss} /*CSS code editor*/ />
+          <Editor LangName="js" value={js} onChange={setJs} /*JS code editor*/ />
         </div>
       </div>
       <div>
